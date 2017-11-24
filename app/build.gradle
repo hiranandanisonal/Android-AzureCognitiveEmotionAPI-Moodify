@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.example.a4.letsbrowse"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories{
+
+    flatDir {
+
+        jcenter()
+
+        dirs 'libs'
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+//        // This library handles music playback
+//    compile 'com.spotify.sdk:spotify-player:1.0.0-beta12@aar'
+    compile 'com.spotify.android:auth:1.0.0-alpha'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile 'com.microsoft.projectoxford:emotion:1.0.355'
+    compile 'com.cuboid:cuboidcirclebutton:1.0.3'
+    compile 'com.rapidapi:rapidconnect-android:0.1'
+    testCompile 'junit:junit:4.12'
+    releaseCompile project(':spotify-player-24-noconnect-2.20b')
+}

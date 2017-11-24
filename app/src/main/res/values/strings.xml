@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mooDify</string>
+    <string name="Get_Emotion">Get Emotion</string>
+    <string name="Capture">Capture</string>
+    <string name="Moodify">mooDify</string>
+    <string name="Developed">"  Developed by   \n Sonali Hiranandani"</string>
+</resources>
